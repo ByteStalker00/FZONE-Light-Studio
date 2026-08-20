@@ -1,0 +1,177 @@
+# FZONE Light Studio - Complete Analysis & Profile
+
+## **📱 APP INFO**
+- **Name:** FZONE Light Studio
+- **Version:** 1.0.0 (2026)
+- **Status:** ✅ Fully Operational
+- **Platform:** Windows Desktop (Electron-based)
+- **Target:** Aquarium Lighting Control System
+
+## **🎯 HARDWARE SPECIFICATIONS**
+- **Model:** ② (23.6-31.5 inch tank - Medium-Large aquarium)
+- **Max Power:** 36W (physical limit)
+- **Total Lumens:** 1950lm
+- **LED Composition:**
+  - 120× LED 5730 (White - main visible light)
+  - 21× LED 5054 (RGB - color mixing)
+  - 6× LED 5730 (UV - moonlight enhancement)
+- **Location:** San Benedetto del Tronto (~43°N, Italy)
+- **Tank Width:** 23.6-31.4 inch (60-80cm)
+
+## **📊 LIGHT PROFILES (6 Slots Optimized)**
+
+### **1. sunMoon - "Sole e Luna" ⭐⭐⭐⭐⭐**
+- **Cycle:** Natural day-night simulation
+- **Dawn (05:16):** White 22% → RGB gradual
+- **Midday (13:14):** White 92%, Red 48%, Green 20%, Blue 62%
+- **Sunset (21:12):** White 55% → fade out
+- **Night:** Blue residual 04% (circadian rhythm)
+- **Power Usage:** 20-25W typical
+- **Best For:** Mixed plants, natural cycle
+
+### **2. moonBlue - "Luna Blu" ⭐⭐⭐⭐⭐**
+- **Objective:** Night blue minimal effect
+- **Unique Feature:** Uses your **6 LED UV** for brighter moonlight
+- **All Channels:** Blue only, White=0, Red=0, Green=0
+- **Progressive Intensity:** 10% → 30% → 60% (max) → 40% → 20% → 5%
+- **Power Usage:** <5W (night)
+- **Best For:** Night observation, UV enhancement
+
+### **3. growth - "Crescita Piante" ⭐⭐⭐⭐✅**
+- **Objective:** Maximum plant growth, intense red
+- **⚠️ Important:** Only 21 RGB LEDs (vs 40-60 on premium lights)
+- **Recommendation:** Start Red at **50%** for first 2 weeks, then increase to 60-70% if no algae
+- **White:** 50-100% depending on growth phase
+- **Power Usage:** 25-30W typical
+- **Best For:** Plant growth with algae monitoring
+
+### **4. dayNight - "Giorno/Notte" ⭐⭐⭐⭐⭐**
+- **Objective:** Balanced community aquarium
+- **Feature:** All channels (W/R/G/B) increase together synchronously
+- **Day:** White 100%, Red 55%, Green 52%, Blue 52%
+- **Night:** All channels off
+- **Power Usage:** 20-30W typical
+- **Best For:** Community tanks, general use
+
+### **5. fullLight - "Luce Piena" ⭐⭐⭐⭐⭐**
+- **Objective:** Maximum light output
+- **Feature:** **100% = your maximum power (36W)**
+- **Day:** All channels at 100% (1950lm total)
+- **Evening:** Gradual dimming to 60%
+- **Power Usage:** 36W (maximum)
+- **Best For:** Demanding plants, maximum intensity
+
+### **6. moonOnly - "Solo Luna" ⭐⭐⭐⭐⭐**
+- **Objective:** Minimal nighttime light
+- **Feature:** Only your **6 LED UV** active
+- **All other channels:** Off (0%)
+- **Constant Blue:** 04% throughout 24 hours
+- **Power Usage:** <5W
+- **Best For:** Night viewing without stress
+
+## **⏰ 24-HOUR MODE (NEW - DEFAULT)**
+- **Active Slots:** 24 hourly points (vs 6 classic slots)
+- **Transitions:** Smooth interpolation (no sudden jumps)
+- **Color Temperature:** Gradual 6500K (morning) → 3000K (evening)
+- **Sunrise/Sunset:** Natural 35s fade distributed over 24 hours
+- **Benefit:** Maximum realism, better for sensitive fish/plants
+- **Default:** `PRESET_SLOT_MODE = 24`
+
+## **🖥️ APP FEATURES**
+
+### **Core Features:**
+- ✅ **24-hour timeline chart** with W/R/G/B channels
+- ✅ **Color legend** on chart (White/Red/Green/Blue)
+- ✅ **Enhanced tooltips** on mouse hover (exact values + trend)
+- ✅ **6 preset profiles** with full customization
+- ✅ **Geolocation sun/sunset** calculation (SBT Italy)
+- ✅ **PWM protection** (prevents flicker at 1-3%)
+- ✅ **Linear fade** (20s profile change, 35s sunrise/sunset)
+- ✅ **QR code generation** for configuration sharing
+- ✅ **Hex code export/import** for presets
+- ✅ **Version 1.0.0** displayed in INFO area
+
+### **Timeline Chart Improvements:**
+- ✅ Color legend sidebar (W/R/G/B with color swatches)
+- ✅ Vertical ruler on hover (shows exact hour)
+- ✅ Tooltip with precise W/R/G/B percentages
+- ✅ Hour markers every 3 hours (00, 03, 06, 09, 12, 15, 18, 21)
+- ✅ Photoperiod shaded area (first to last active slot)
+
+### **Configuration Management:**
+- ✅ **Save/Load** presets via QR code
+- ✅ **Import/Export** hex codes
+- ✅ **6-slot classic mode** as fallback
+- ✅ **24-hour advanced mode** (default)
+- ✅ **Auto-save** configuration in browser
+
+## **🎨 CHANNEL MAPPING (W/R/G/B)**
+| Channel | LED Type | Color | Purpose |
+|---------|----------|-------|---------|
+| **W** | 120× 5730 White | #ffffff | Main visible light |
+| **R** | 21× 5054 Red | #e5534b | Plant growth, red spectrum |
+| **G** | 21× 5054 Green | #3fb950 | Plant health, green spectrum |
+| **B** | 6× 5730 + RGB | #58a6ff | Moon effect, blue spectrum |
+
+**Power Scale:** 0-100% (100% = 36W = 1950lm)
+
+## **📅 GEOLOCATION (San Benedetto del Tronto)**
+- **Latitude:** ~43°N
+- **Longitude:** ~13°E
+- **Sunrise/Sunset:** Calculated dynamically based on date
+- **Feature:** Click "Sole" button to sync with local sun times
+
+## **🔧 TECHNICAL SPECS**
+- **Build:** Electron + JavaScript + Canvas 2D
+- **Version:** 1.0.0 (released 2026)
+- **PWM Frequency:** Protected range 1-3% (no flicker)
+- **Canvas Resolution:** Device pixel ratio aware
+- **Responsive:** Adapts to window resize
+- **Export:** PNG QR code, Hex code copy
+
+## **📦 FILES INCLUDED**
+| File | Description |
+|------|-------------|
+| `assets/js/main.js` | Core logic, chart drawing, presets |
+| `assets/js/presets.js` | 6 profiles + 24-hour interpolation |
+| `bin/FZONE Light Studio.exe` | Compiled Windows executable |
+| `README.md` | Complete user documentation |
+| `Profiles.me` | This file - complete analysis |
+| `assets/img/fzone-logo.png` | Application logo |
+
+## **🆕 ULTIME MODIFICHE (Versione 1.0.0)**
+| Modification | Date | Status |
+|--------------|------|--------|
+| Modalità 24 ore implementata | Recent | ✅ Attiva di default |
+| Versione 1.0.0 aggiunta | Recent | ✅ Info display |
+| Errore immagine/logo risolto | Recent | ✅ Webp rimosso |
+| Miglioramenti grafico 24h | Recent | ✅ Legenda + Tooltip |
+| Hardware 36W ottimizzato | Recent | ✅ Tutti profili |
+| EXE ricompilato | Recent | ✅ Build finale |
+
+## **💡 USER GUIDE (Rapid)**
+1. **Apri l'app** - `FZONE Light Studio.exe`
+2. **Scegli profilo** - Clicca su sunMoon, moonBlue, ecc.
+3. **Modalità 24h** - Attiva da impostazioni (default)
+4. **Osserva grafico** - Timeline con W/R/G/B in tempo reale
+5. **Mouse hover** - Tooltip valori precisi + righello
+6. **Esporta** - QR code o codice esadecimale
+7. **Luce naturale** - Geolocalizzazione SBT automatica
+
+## **⚠️ IMPORTANT NOTES**
+- **Non superare 100% potenza** (limite fisico 36W)
+- **Monitorare alghe** con profilo growth (inizia al 50% Rosso)
+- **Usa moonBlue/notte** per osservazione notturna
+- **Slot classici** disponibili come fallback (modalità 6)
+- **Pulizia regolare** dei contatti LED per massima efficienza
+
+## **📞 SUPPORTO**
+- **Issue:** Segnala bug o suggerimenti
+- **Feedback:** Miglioramenti profili luce
+- **Compatibilità:** Hardware 36W testato e ottimizzato
+
+---
+
+*FZONE Light Studio - Versione 1.0.0 - Ottimizzato per hardware 36W/1950lm*
+*Hardware: San Benedetto del Tronto (~43°N, Italy) - Tutti i diritti riservati*
+*Analisi completata: Tutte le funzionalità verificate e confermate operative*
