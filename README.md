@@ -162,14 +162,6 @@ Adjust values based on your aquarium inhabitants:
 - **Optimized profiles**: Values consistent with each profile's name
 - **Sunrise/sunset fade**: 35 seconds for natural realism
 
-### Build & Distribution
-```bash
-# Recompile EXE
-cmd /c build\build.bat
-
-# Result: bin\FZONE Light Studio.exe (single file)
-```
-
 ## 📝 Important Notes
 
 1. **Localization**: Sunrise/sunset times are based on the entered coordinates
